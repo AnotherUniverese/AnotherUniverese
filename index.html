@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECRET</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+            background-color: black;  /* Black background initially */
+            color: white;  /* White text */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            text-align: center; /* Center-align text */
+        }
+
+        #message {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">How did you get here?</div>
+
+    <script>
+        setTimeout(() => {
+            // Change the text to "Go away" after 5 seconds
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = "Go away";
+            
+            // Wait for 3 more seconds and then turn background red before closing the tab
+            setTimeout(() => {
+                // Change background color to red
+                document.body.style.backgroundColor = 'red';
+
+                // Close the tab after 1 second (to give user time to see the red background)
+                setTimeout(() => {
+                    window.close(); // Attempt to close the tab
+                }, 1000);
+            }, 3000);
+        }, 5000);
+    </script>
+
+</body>
+</html>
